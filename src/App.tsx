@@ -1,32 +1,34 @@
+
 import { useState } from "react";
 import Header from "./components/header";
 import Menu from "./components/menu";
-import { BrowserRouter, Route,  Routes } from "react-router-dom";
-import Home from "./pages/home";
-import Shorts from "./pages/shorts";
-import Inscription from "./pages/inscricao";
 import Categories from "./components/categories";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/route";
 
 function App() {
-
-  const [openMenu,setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <BrowserRouter>
-    <div className="App">
-      <Header openMenu={openMenu} setOpenMenu={setOpenMenu}/>
-      <Categories openMenu={openMenu}/>
-      <div style={{width:'100%', display:'flex' }}>
-        <Menu openMenu= {openMenu}/>
-        <div style={{ width:'100%', padding:'50px 70px', boxSizing:'border-box',display:'flex', justifyContent:'center' }}>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/shorts' element={<Shorts/>}/>
-            <Route path='/iscricao' element={<Inscription/>}/>
-          </Routes>
+      <div className="App">
+        <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <Categories openMenu={openMenu} />
+        <div style={{ width: "100%", display: "flex" }}>
+          <Menu openMenu={openMenu} />
+          <div
+            style={{
+              width: "100%",
+              padding: "50px 70px",
+              boxSizing: "border-box",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <AppRoutes />
+          </div>
         </div>
       </div>
-    </div>
     </BrowserRouter>
   );
 }
