@@ -5,6 +5,7 @@ import { BrowserRouter, Route,  Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Shorts from "./pages/shorts";
 import Inscription from "./pages/inscricao";
+import Categories from "./components/categories";
 
 function App() {
 
@@ -14,9 +15,10 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Header openMenu={openMenu} setOpenMenu={setOpenMenu}/>
+      <Categories openMenu={openMenu}/>
       <div style={{width:'100%', display:'flex' }}>
         <Menu openMenu= {openMenu}/>
-        <div style={{ width:'100%'}}>
+        <div style={{ width:'100%', padding:'50px 70px', boxSizing:'border-box',display:'flex', justifyContent:'center' }}>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/shorts' element={<Shorts/>}/>
