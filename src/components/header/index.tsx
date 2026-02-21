@@ -14,6 +14,7 @@ import SearchIcon from '../../assets/search.png';
 import MicIcon from '../../assets/microfone-gravador.png';
 import VideoIcon from '../../assets/video.png';
 import NotificationIcon from '../../assets/sino.png';
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {
     openMenu:boolean,
@@ -22,6 +23,9 @@ interface IProps {
 
 
 function Header({openMenu,setOpenMenu}:IProps){
+
+    const navigate = useNavigate();
+
     return(
        <Container>
         <LogoContainer>
@@ -57,7 +61,7 @@ function Header({openMenu,setOpenMenu}:IProps){
                 <ButtonIcon alt='' src={NotificationIcon}/>
             </ButtonContainer>
 
-            <ButtonContainer margin = '0 0 0 10px' >
+            <ButtonContainer margin = '0 0 0 10px' onClick={() => navigate('/login')} >
                 D
             </ButtonContainer>
             

@@ -24,8 +24,6 @@ function App() {
                width: "100%",
                padding: "50px 70px",
                boxSizing: "border-box",
-               display: "flex",
-               justifyContent: "center",
              }}
            >
              <AppRoutes />
